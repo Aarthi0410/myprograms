@@ -1,0 +1,11 @@
+public class Simple{
+public static void main(String args[]){
+int i;
+String res="";
+String input1="arthi girl";
+String a[]=input1.split(" ");
+for(i=0;i<a.length;i++){
+ res =res+" "+ a[i].substring(0, 1).toUpperCase() + a[i].substring(1);
+}
+System.out.print(res);
+}}
