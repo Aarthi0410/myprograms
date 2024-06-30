@@ -34,6 +34,10 @@ import  java.util.stream.*;
 		return (input6.equals("even"))? (int)data.count() : (int)data2.count();
 	}
 
+	List<Integer> arr = Arrays.asList(input1, input2, input3, input4, input5);
+	return (input6.equals("even"))? (int)arr.stream().filter(n->n%2==0).count() 
+					: (int)arr.stream().filter(n->n%2!=0).count();
+
 
         
     }
