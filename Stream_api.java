@@ -21,5 +21,21 @@ List<Integer> numlist5 = Arrays.asList(1,2,6,3,4,4,5,5,6);
 List<Integer> num7=numlist5.stream().distinct().sorted().collect(Collectors.toList()); // Re
 List<Integer> num8=numlist5.stream().distinct().sorted(Comparator.reverseOrder()).collect(Collectors.toList()); // Re
    System.out.println("000"+ num8+"-------"+num7);
+
+
+
+    ///////count of odd and even numbers
+        import  java.util.*;
+import  java.util.stream.*;
+        
+        List<Integer> arr = Arrays.asList(input1, input2, input3, input4, input5);
+        Stream<Integer> data = arr.stream().filter(n->n%2==0);
+        Stream<Integer> data2 = arr.stream().filter(n->n%2!=0);
+		return (input6.equals("even"))? (int)data.count() : (int)data2.count();
+	}
+
+
+        
     }
+    
 }
