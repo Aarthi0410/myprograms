@@ -41,5 +41,39 @@ import  java.util.stream.*;
 
         
     }
+
+===============================================
+	LIST CONTAINS CHECK
+====================================
+List<String> words = Arrays.asList("Python", "JavaScript", "Java", "C++");
+
+boolean containsJava = words.stream()
+                           .anyMatch("Java"::equals);
+
+System.out.println(containsJava); // Output: true
     
 }
+
+
+================================================
+	FACTORIAL
+==============================================
+return IntStream.rangeClosed(2, input1).reduce(1, (x, y) -> x * y);
+
+=========================================
+	COUNT OF PRIME IN A RANGE 
+=========================================
+	 int count=0;
+        for(int i=input1;i<=input2;i++){
+            if(isPrime(i)) count++;
+        }
+         return count;  
+		    
+	}
+    public static boolean isPrime(int num){
+        for(int i=2; i<num;i++){
+                if(num%i==0) return false;
+        }
+        return true;
+    }
+
