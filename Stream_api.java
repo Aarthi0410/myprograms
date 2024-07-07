@@ -76,4 +76,36 @@ return IntStream.rangeClosed(2, input1).reduce(1, (x, y) -> x * y);
         }
         return true;
     }
+=========================================
+PALINDROM OR NOT
+================================
+	String str = String.valueOf(input1);
+        StringBuilder strb = new StringBuilder(str);
+        String s=strb.reverse().toString();
+        if(str.equals(s)) return 2; else return 1;
 
+other manual way of number palindrom
+
+	  int r,sum=0,temp;    
+  int n=454;//It is the number variable to be checked for palindrome  
+  
+  temp=n;    
+  while(n>0){    
+   r=n%10;  //getting remainder  
+   sum=(sum*10)+r;    
+   n=n/10;    
+  }    
+  if(temp==sum)    
+   System.out.println("palindrome number ");    
+  else    
+   System.out.println("not palindrome");    
+}  
+
+STring palindrom without string builder
+	
+   String output= "";
+		for(int i=input1.length()-1;i>=0;i--){
+            output+=input1.charAt(i);
+        }
+        return (input1.equalsIgnoreCase(output))? 2:1;
+===================================
