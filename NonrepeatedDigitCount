@@ -17,3 +17,23 @@
         }
         return count;
 	
+=======================
+MOST FREQUENT DIGIT FROM GIVEN 4 NUMBERS
+=========================
+List<Integer> arr= Arrays.asList(input1,input2,input3,input4);
+        int Max=0, index=0;
+        int[] e= new int[10];
+        for(int a:arr){
+            while(a>0){
+                e[a%10]++;
+                a/=10;
+            }
+        }
+        for(int i=0;i<10;i++){
+            if(e[i]>=Max){
+                Max=e[i];
+                index=i;
+            }
+        }
+        return index;
+	}
