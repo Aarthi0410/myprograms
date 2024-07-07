@@ -1,0 +1,22 @@
+========================================
+FREQUENCY OF EACH CHAR
+=========================================
+ String inputString = "programming is fun";
+
+        // Using Java 8 streams to find the frequency of each character
+        Map<Character, Long> frequencyMap = inputString.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), 
+                 Collectors.counting()));
+
+        // Displaying the frequency of each character
+        frequencyMap.forEach((character, frequency) ->
+                System.out.println("Character: " + character + ", Frequency: " + frequency));
+    }
+FREQUENCY OF INTEGERS
+====================
+int []array= {1,2,2,3,45,5};
+Map<Integer, Long> freq = Arrays.stream(array).boxed().
+                collect(Collectors.groupingBy(Integer::intValue, Collectors.counting()));
+===================
+
