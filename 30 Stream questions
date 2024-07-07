@@ -19,4 +19,162 @@ int []array= {1,2,2,3,45,5};
 Map<Integer, Long> freq = Arrays.stream(array).boxed().
                 collect(Collectors.groupingBy(Integer::intValue, Collectors.counting()));
 ===================
+PREFIX SUFFIX
+=============
+Collectors.joining(CharSequence delimiter,CharSequence prefix,CharSequence suffix) and you can look here for the API.
 
+String values = list.stream().collect(Collectors.joining(",", "[", "]"));
+
+==========
+MIN MAX IN A LIST
+================
+int[] fie ={0,1};
+     IntStream str = IntStream.of(fie);
+System.out.println("Min of list " + str.min().getAsInt());
+System.out.println("Min of list " + str.max().getAsInt());
+
+================================
+merge two array and sort 
+==================
+int[] fie ={0,1};
+int[] as={8,7,6,0,1};
+     IntStream str = IntStream.concat(IntStream.of(fie),IntStream.of(as));
+     str.sorted().forEach(n->System.out.println(" = "+n ));
+
+SAME SCENARIO WITHOUT DUPLICATES
+
+str.distinct().sorted().forEach(n->System.out.println(" = "+n ));
+
+===================
+MAX 3 ELEMENT AND MIN 3 ELEMENT OF LIST
+======================
+
+  List<Integer> randomNumbers = Arrays.asList(12, 32, 2, 4, 777, 5, 32, 890, 422, 44, 99, 43);
+     List<Integer> min3 =randomNumbers.stream().sorted().limit(3).collect(Collectors.toList()); //2,4,5
+     List<Integer> max3 =randomNumbers.stream().sorted(Comparator.reverseOrder()).limit(3).collect(Collectors.toList());// 890,777,422
+
+==========================
+
+
+  String string1 = "Heart";
+  String string2 = "Earth";
+
+  string1 = Stream.of(string1.split("")).map(String::toUpperCase)
+    .sorted().collect(Collectors.joining());
+  string2 = Arrays.stream(string2.split("")).map(String::toUpperCase)
+    .sorted().collect(Collectors.joining());
+
+  if (string1.equalsIgnoreCase(string2)) {
+
+   System.out.println("Two String " + string1 + " and " 
+         + string2 + " are Anagrams");
+
+  } else {
+   System.out.println("Two String " + string1 + 
+            " and " + string2 + " are NOT Anagrams");
+
+=======================
+SUM OF GIVEN LIST
+==================
+
+List<Integer> randomNumbers = Arrays.asList(12, 32, 2, 4, 777, 5, 32, 890, 422, 44, 99, 43);
+     int min3 =randomNumbers.stream().mapToInt(Integer::intValue).sum(); //2362
+
+========================
+secondLargestNumberFromList
+========================
+private static void secondLargestNumberFromList() {
+        List<Integer> oneToTen = of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Integer secondLarge = oneToTen.stream()
+                .sorted(reverseOrder())
+                .skip(1)
+                .findFirst()
+                .get();
+
+        System.out.println(secondLarge);
+    }
+===============================
+SORT BY LENGTH
+=============================
+private static void sortByLengthOfList() {
+        List<String> names = Arrays.asList("rohit", "urmila", "rohit", "urmila", "ram", "sham", "sita", "gita");
+        names.stream()
+              .sorted(Comparator.comparingInt(String::length))
+              .forEach(System.out::println);
+REVERSE ORDER
+names.stream()
+              .sorted(Comparator.comparingInt(String::length).reversed())
+              .forEach(System.out::println);
+    }
+======================
+SUM COUNT AVERAGE 
+=======================
+List<Integer> list = Arrays.asList(5,3,4,1,2);
+        System.out.println("sum by using Stream : " + list.stream().mapToInt(Integer::intValue).sum());
+        System.out .println("count by using Stream: " + list.stream().mapToInt(Integer::intValue).count());
+        System.out.println("average by using Stream : " + list.stream().mapToInt(Integer::intValue).average());
+        System.out.println("sort by using Stream: " + list.stream().sorted().collect(Collectors.toList()));
+
+===============
+COMMON ELEMENTS FOR TWO ARRAY
+=========================
+private static void commonElements() {
+        List<Integer> oneToTen = of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> twoToTen = of(2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> commonElements = oneToTen.stream()
+                .filter(twoToTen::contains)
+                .toList();
+        System.out.println(commonElements);
+    }
+
+===============================
+REVERSE EACH WORD IN A  SENTENCE
+==================================
+
+ private static void reverseEachWord() {
+        String stmt = "java is OOP language";
+        String reverseEachWord = Arrays.stream(stmt.split(" "))
+                .map(word -> new StringBuffer(word).reverse())
+                .collect(joining(" "));
+        System.out.println(reverseEachWord);
+    }
+
+========================
+REVERSE EACH INTEGER
+=====================
+ private static void reversedArray() {
+        int [] numberArray ={1,2,3,4,5,6,7,8,9,10};
+        System.out.println("original array" + Arrays.toString(numberArray));
+        int[] reversedArray = IntStream.rangeClosed(1, numberArray.length)
+                .map(number -> numberArray[numberArray.length - number])
+                .toArray();
+        System.out.println("reversedArray Array" + Arrays.toString(reversedArray));
+    }
+
+===========================
+
+FIRST 10 ODD AND EVEN NUMBERS
+==============================
+Stream.iterate(1,i->i+2)
+                .limit(10)
+                .forEach(System.out::println);
+
+Stream.iterate(2,i->i+2)
+                .limit(10)
+                .forEach(System.out::println);
+
+======================================
+Find strings in a list that start with a number
+======================================
+String [] words= {"rohit","foo","nemo","target1","12Target","2robot"};
+List<String> stringStartNumber = Arrays.stream(words)
+                 .filter(word -> Character.isDigit(word.charAt(0)))
+                 .toList();
+
+==================================================
+duplicate char
+======================
+System.out.println (Arrays.stream (word.split ("")).distinct()
+        .filter (str -> word.indexOf (str) != word.lastIndexOf (str))
+        .map (str -> str.charAt (0))
+        .collect (Collectors.toList ()));
