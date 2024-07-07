@@ -1,0 +1,19 @@
+	  int dig, count=0;
+        int[] num= new int[10];
+		for(int i=0;i<10;i++){
+            num[i]=0;
+        }
+        while (input1>0){
+            dig= input1%10;
+            input1/=10;
+            for(int j=0;j<10;j++){
+                if(dig==j){
+                    num[j]+=1;
+                }
+            }
+        }
+        for(int i=0;i<10;i++){
+            if(num[i]==1) count++;
+        }
+        return count;
+	
