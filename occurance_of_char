@@ -1,0 +1,19 @@
+public static void main(String args[]) {
+	int i, len;  
+    int counter[] = new int[256];  
+    String str="Asgdhihrjbfasaww";  
+    for (i = 0; i < str.length(); i++)   
+    {  
+        counter[(int) Character.toLowerCase(str.charAt(i))]++;  
+    }  
+    //print Frequency of characters  
+    for (i = 0; i < 256; i++)   
+    {  
+        if (counter[i] != 0)   
+        {  
+        //prints frequency of characters      
+        System.out.println((char) i + " --> " + counter[i]);  
+        }  
+    }  
+    
+    }    
