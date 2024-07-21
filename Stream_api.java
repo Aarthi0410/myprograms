@@ -60,6 +60,15 @@ System.out.println(containsJava); // Output: true
 ==============================================
 return IntStream.rangeClosed(2, input1).reduce(1, (x, y) -> x * y);
 
+
+======================================
+SUM OF N NATURAL NUMBERS
+======================================
+	int n=5;
+int hi= IntStream.rangeClosed(1, n).reduce(0, (x, y) -> x + y);
+    System.out.println(hi);//15 is sum
+	
+
 =========================================
 	COUNT OF PRIME IN A RANGE 
 =========================================
