@@ -62,3 +62,16 @@ public class NthPrime {
     System.out.println("Value of nth prime: " + num);
   }
 }
+
+=========================
+        weight of HIll /// =10+(12+12)+(14+14+14)// input1 is row=3 // input2 is head=10// input3 is increament seq=2//
+===========================
+ int sum=0;
+	for(int i=0;i <input1; i++){
+            for(int j=0; j<=i; j++){
+                sum+=input2;
+            }
+            input2+=input3;
+        }
+        return sum;
+	}
