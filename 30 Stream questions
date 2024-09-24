@@ -23,7 +23,7 @@ PREFIX SUFFIX
 =============
 Collectors.joining(CharSequence delimiter,CharSequence prefix,CharSequence suffix) and you can look here for the API.
 
-String values = list.stream().collect(Collectors.joining(",", "[", "]"));
+String values = list.stream().collect(Collectors.joining(",", "[", "]")); // joining(delimeter, prefix, suffix)
 
 ==========
 MIN MAX IN A LIST
