@@ -151,6 +151,13 @@ REVERSE EACH INTEGER
         System.out.println("reversedArray Array" + Arrays.toString(reversedArray));
     }
 
+=============================
+sum of 10 natural numbers
+==============================
+int sumOf10NaturalNumber = IntStream.rangeClosed(1, 10)
+                .sum();
+        System.out.println(sumOf10NaturalNumber);
+
 ===========================
 
 FIRST 10 ODD AND EVEN NUMBERS
