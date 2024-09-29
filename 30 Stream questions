@@ -185,3 +185,24 @@ System.out.println (Arrays.stream (word.split ("")).distinct()
         .filter (str -> word.indexOf (str) != word.lastIndexOf (str))
         .map (str -> str.charAt (0))
         .collect (Collectors.toList ()));
+
+===============================
+last element
+=======================
+int[] intArray = {2, 4, 6, 7, 9, 2};
+int num = IntStream.of(intArray)           // Create an IntStream from the intArray
+                   .skip(intArray.length - 1) // Skip all elements except the last one
+                   .boxed()                 // Convert the primitive stream to a Stream<Integer>
+                   .findFirst()             // Find the first element in the stream
+                   .get();                  // Get the value from the Optional<Integer>
+System.out.println(num); 
+
+=====================
+calculate age
+===================
+private static void calculatePersonAgeInYear() {
+        LocalDate birthDate = LocalDate.of(1998, 8, 17);
+        LocalDate currentDate = LocalDate.now();
+        int age = Period.between(birthDate, currentDate).getYears();
+        System.out.println("Age of the person is: " + age);
+    }
