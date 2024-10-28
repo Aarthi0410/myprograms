@@ -17,3 +17,27 @@ public static void main(String args[]) {
     }  
     
     }    
+
+
+-====================
+A-Z ALL CHAR should be present in string, PRESENT OR NOT program
+-----------------------------
+
+int alphabet[] = new int[256];
+for (char c = 'a'; c <= 'z'; c++) {
+    alphabet[(int) c] = 0;
+}
+
+	 int counter[] = new int[256];  
+    String str="Asgdhihrjbfasaww";  
+    for (i = 0; i < str.length(); i++)   
+    {  
+        alphabet[(int) Character.toLowerCase(str.charAt(i))]++;  
+    }  
+
+for (char c = 'a'; c <= 'z'; c++) {
+    if(alphabet[(int) c] == 0)
+	return false
+}
+return true
+
